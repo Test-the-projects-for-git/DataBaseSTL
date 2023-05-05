@@ -1,9 +1,9 @@
-#include<iostream>
+#include "base.hpp"
 
 int main(int argc, char* argv[])
 {
-	
-	std::cout << "main()" << std::endl;
+
+	cout << "The Project is started" << endl;
 
 	return 0;
 }

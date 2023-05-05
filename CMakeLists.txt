@@ -4,4 +4,5 @@ project(DataBaseSTL) #название проекта
 
 #”казываем им€ исполн€емого файла и все исходные файлы которые есть в проекте
 include_directories(src/includes)
-add_executable (DataBaseApp src/main.cpp src/base.cpp src/base.hpp)
+add_executable (DataBaseApp src/main.cpp 
+src/base.cpp src/includes/base.hpp)
