@@ -6,3 +6,4 @@ project(DataBaseSTL) #название проекта
 include_directories(src/includes)
 add_executable (DataBaseApp src/main.cpp 
 src/base.cpp src/includes/base.hpp)
+#the new commintariies
