@@ -2,9 +2,11 @@
 
 
 /*global varible and data structure*/
-int gAmountPerson;
 int CounterPers;
+int Action;
 vector<Person> vecPers;
+Person temp;
+char choose;
 
 void ScopePerson::InputPerson(Person& Pers)
 {
@@ -20,12 +22,21 @@ void ScopePerson::InputPerson(Person& Pers)
 	cout << "Input Ended";
 }
 
-void ScopePerson::Output(Person& Pers)
+void ScopePerson::Output(vector<Person>& vecPers)
 {
-	cout << "Name: " << Pers.name << endl;
-	cout << "Family: " << Pers.family << endl;
-	cout << "Address: " << Pers.address << endl;
-	cout << "Age: " << Pers.age << endl;
+	for (size_t i = 0; i < vecPers.size(); i++)
+	{
+		cout << "Person number is [" << i << "]" << endl;
+		cout << vecPers[i].name << endl;
+		cout << vecPers[i].family << endl;
+		cout << vecPers[i].address << endl;
+		cout << vecPers[i].age << endl;
+	}
+}
+
+void ScopePerson::message(const char* msg)
+{
+	cout << msg << endl;
 }
 
 //bool ScopePerson::searchPerson(string& name)
