@@ -13,15 +13,21 @@ using std::vector;
 using std::string;
 
 /*sturctures*/
-struct Person;
+struct Person
+{
+	string name;
+	string family;
+	string address;
+	int age;
+};
 
 
-
+/*scope functions*/
 namespace ScopePerson
 {
 	void InputPerson(Person& Pers);
 	void Output(Person& Pers);
-
+	bool searchPerson(string& name);
 	/*function for implement
 	1. Sorted Person by name
 	2. Deleted Person

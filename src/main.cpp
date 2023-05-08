@@ -4,22 +4,18 @@
 
 int main(int argc, char* argv[])
 {
-	extern Person* ptrPers;
-	extern int gAmountPerson;
+
 	extern int CounterPers;
-
-	cout << "Input amount the persons:";
-	cin >> gAmountPerson;
-
-	ptrPers = new Person[gAmountPerson];
-
-	ScopePerson::InputPerson(ptrPers[CounterPers]);
-	CounterPers++;
+	extern vector<Person>vecPers;
+	Person temp;
 	
-	for (int i = 0; i < gAmountPerson; i++)
-	{
-		ScopePerson::Output(ptrPers[i]);
-	}
-
+	/*implementation logical menu of programm
+		first input person
+		second output person
+		third search person
+		fourth sort person
+		fifth edit person
+	*/
+	
 	return 0;
 }

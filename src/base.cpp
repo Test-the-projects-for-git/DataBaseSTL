@@ -1,18 +1,10 @@
 #include "base.hpp"
 
-/*sturctures*/
-struct Person
-{
-	string name;
-	string family;
-	string address;
-	int age;
-};
 
-/*global varible*/
+/*global varible and data structure*/
 int gAmountPerson;
 int CounterPers;
-Person* ptrPers;
+vector<Person> vecPers;
 
 void ScopePerson::InputPerson(Person& Pers)
 {
@@ -35,3 +27,8 @@ void ScopePerson::Output(Person& Pers)
 	cout << "Address: " << Pers.address << endl;
 	cout << "Age: " << Pers.age << endl;
 }
+
+//bool ScopePerson::searchPerson(string& name)
+//{
+//
+//}
