@@ -3,7 +3,7 @@
 #include<vector>
 #include<string>
 #include<iomanip>
-
+#include<algorithm>
 
 using std::cout;
 using std::cin;
@@ -29,15 +29,15 @@ namespace ScopePerson
 {
 	void InputPerson(Person& Pers);
 	void Output(vector<Person>& vecPers);
-	bool searchPerson(string& name);
 	void message(const char* msg);
+	void SortPers(vector<Person>& vecPers);
+	void EditPerson(vector<Person>& vecPers, const int index);
+	int searchPerson(const vector<Person>&vecPers, const string& searchName);
+	void DeletePerson(vector<Person>& vecPers,const int index);
 	/*function for implement
-	1. Sorted Person by name
-	2. Deleted Person
-	3. Edit Person
 	4. Read Disc Person
 	5. Write Disc Person
-	6. Search Person by name
+	
 	*/
 
 }
