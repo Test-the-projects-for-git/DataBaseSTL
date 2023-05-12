@@ -68,7 +68,7 @@ int ScopePerson::searchPerson(const vector<Person>& vecPers, const string& searc
 	return -1;
 }
 
-void ScopePerson::EditPerson(vector<Person>& vecPers,const int index)
+void ScopePerson::EditPerson(vector<Person>& vecPers, const int index)
 {
 	cout << "Input Name: ";
 	cin >> vecPers[index].name;
@@ -79,10 +79,56 @@ void ScopePerson::EditPerson(vector<Person>& vecPers,const int index)
 	cout << "Input age: ";
 	cin >> vecPers[index].age;
 
-	cout << "Person was edited!"<<endl;
+	cout << "Person was edited!" << endl;
 }
 
 void ScopePerson::DeletePerson(vector<Person>& vecPers, const int index)
 {
 	vecPers.erase(vecPers.begin() + index);
+}
+
+void ScopePerson::WriteDisc(const vector<Person>& vecPers)
+{
+	ofstream outfile("person.txt", ostream::app);
+
+	if (outfile.is_open())
+	{
+		cout << "file create with success" << endl;
+		cout << "going write...";
+		for (int i = 0; i < vecPers.size(); i++)
+		{
+			outfile << vecPers[i].name << ' ' << vecPers[i].family
+				<< ' ' << vecPers[i].address << ' ' << vecPers[i].age << endl;
+		}
+	}
+	else
+	{
+		cout << "file create failure" << endl;
+	}
+
+	outfile.close();
+}
+
+void ScopePerson::ReadDisc(vector<Person>& vecPers)
+{
+	ifstream infile("person.txt");
+	Person tmp;
+	if (infile.is_open())
+	{
+		cout << "file is open with success" << endl;
+		cout << "going read data from file" << endl;
+		while (!infile.eof())
+		{
+			infile >> tmp.name >> tmp.family
+				>> tmp.address >> tmp.age;
+			vecPers.push_back(tmp);
+		}
+
+		cout << "file was reading success" << endl;
+	}
+	else
+	{
+		cout << "Failure open file" << endl;
+	}
+	infile.close();
 }

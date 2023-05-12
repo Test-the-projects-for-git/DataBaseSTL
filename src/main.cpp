@@ -10,8 +10,8 @@ int main(int argc, char* argv[])
 	extern Person temp;
 	extern int Action;
 	extern char choose;
-	
-	cout << std::setw(50) << std::setfill('-') << " Data base" 
+
+	cout << std::setw(50) << std::setfill('-') << " Data base"
 		<< std::setw(50) << std::setfill('-') << std::endl;
 	do
 	{
@@ -22,6 +22,9 @@ int main(int argc, char* argv[])
 		ScopePerson::message("3 sort person");
 		ScopePerson::message("4 Edit Person");
 		ScopePerson::message("5 Remove Person");
+		ScopePerson::message("6 Write data on disc");
+		ScopePerson::message("7 Read data from disc");
+		ScopePerson::message("0 Exit the programm");
 		cin >> Action;
 
 		if (Action == 1)
@@ -56,6 +59,7 @@ int main(int argc, char* argv[])
 		}
 		else if (Action == 5)
 		{
+			/*code is repeat */
 			string name("");
 			cout << "Enter the name Person: ";
 			cin >> name;
@@ -70,12 +74,23 @@ int main(int argc, char* argv[])
 				ScopePerson::DeletePerson(vecPers, index);
 			}
 		}
-
+		else if (Action == 6)
+		{
+			ScopePerson::WriteDisc(vecPers);
+		}
+		else if (Action == 7)
+		{
+			ScopePerson::ReadDisc(vecPers);
+		}
+		else if (Action == 0)
+		{
+			exit(0);
+		}
 
 		cout << "Repeat the programm y = yes / n = not: ";
 		cin >> choose;
 	} while (choose != 'n');
 
-	
+
 	return 0;
 }

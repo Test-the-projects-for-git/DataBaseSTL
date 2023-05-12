@@ -8,7 +8,7 @@
 using std::cout;
 using std::cin;
 using std::endl;
-using std::cerr;
+using std::ostream;
 using std::ifstream;
 using std::ofstream;
 using std::vector;
@@ -32,12 +32,9 @@ namespace ScopePerson
 	void message(const char* msg);
 	void SortPers(vector<Person>& vecPers);
 	void EditPerson(vector<Person>& vecPers, const int index);
-	int searchPerson(const vector<Person>&vecPers, const string& searchName);
-	void DeletePerson(vector<Person>& vecPers,const int index);
-	/*function for implement
-	4. Read Disc Person
-	5. Write Disc Person
-	
-	*/
+	int searchPerson(const vector<Person>& vecPers, const string& searchName);
+	void DeletePerson(vector<Person>& vecPers, const int index);
+	void WriteDisc(const vector<Person>& vecPers);
+	void ReadDisc(vector<Person>& vecPers);
 
 }
